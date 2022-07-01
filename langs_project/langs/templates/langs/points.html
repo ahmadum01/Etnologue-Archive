@@ -1,0 +1,52 @@
+{% extends './base.html' %}
+{% load static %}
+{% block title %} Archive [Points on the map] {% endblock %}
+
+
+{% block header %}
+  <div class="container my-4">
+<h1>Points of languages on the map</h1>
+  </div>
+{% endblock %}
+
+{% block pagination %}
+  <div class="my-4">
+    <nav aria-label="Page navigation example my-4">
+      <ul class="pagination justify-content-center">
+        {% for letter in pagination_letters %}
+          <li class="page-item"><a class="page-link" href="/browse/map-points/{{ letter.lower }}">{{ letter }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+{% endblock %}
+
+
+{% block content %}
+<div class="container my-4">
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ISO 639-3</th>
+      <th scope="col">north</th>
+      <th scope="col">south</th>
+      <th scope="col">east</th>
+      <th scope="col">west</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for point in map_points %}
+      <tr>
+        <td>{{ point.iso }}</td>
+        <td>{{ point.north }}</td>
+        <td>{{ point.south }}</td>
+        <td>{{ point.east }}</td>
+        <td>{{ point.west }}</td>
+      </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+</div>
+{% endblock %}

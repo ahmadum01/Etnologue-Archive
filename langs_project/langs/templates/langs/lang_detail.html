@@ -1,0 +1,104 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block title %}
+    Archive [Language code]
+{% endblock %}
+
+{% block header %}
+    <div class="container my-4">
+        <h1>{{ language.language_name }}</h1>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container my-4">
+        <h3>A language of {{ language.language_of|safe}}</h3>
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td>ISO 639-3</td>
+                    <td>{{ language.iso|safe }}</td>
+                </tr>
+                <tr>
+                    <td>Alternate Names</td>
+                    <td>{{ language.alternate_names|safe }}</td>
+                </tr>
+                <tr>
+                    <td>Autonym</td>
+                    <td>{{ language.autonym|safe}}</td>
+                </tr>
+                <tr>
+                    <td>User Population</td>
+                    <td>{{ language.user_population|safe }}</td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>{{ language.location|safe }}</td>
+                </tr>
+                <tr>
+                    <td>Language Maps</td>
+                    <td>{{ language.language_maps|safe }}</td>
+                </tr>
+                <tr>
+                    <td>Language status</td>
+                    <td>{{ language.language_status|safe }}</td>
+                </tr>
+                <tr>
+                    <td>classification</td>
+                    <td>{{ language.classification|safe }}</td>
+                </tr>
+                <tr>
+                    <td>Dialects</td>
+                    <td>{{ language.dialects|safe }}</td>
+                </tr>
+                <tr>
+                    <td>Typology</td>
+                    <td>{{ language.typology|safe }}</td>
+                </tr>
+                <tr>
+                    <td>Language Use</td>
+                    <td>{{ language.language_use|safe }}</td>
+                </tr>
+                <tr>
+                    <td>Language Development</td>
+                    <td>{{ language.language_development|safe }}</td>
+                </tr>
+                <tr>
+                    <td>Language Resources</td>
+                    <td>{{ language.language_resource|safe }}</td>
+                </tr>
+                <tr>
+                    <td>Writing</td>
+                    <td>{{ language.writing|safe }}</td>
+                </tr>
+                <tr>
+                    <td>Other Comments</td>
+                    <td>{{ language.other_comments|safe }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <h4>Point on the map</h4>
+        <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">ISO 639-3</th>
+                  <th scope="col">north</th>
+                  <th scope="col">south</th>
+                  <th scope="col">east</th>
+                  <th scope="col">west</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>{{ point.iso }}</td>
+                    <td>{{ point.north }}</td>
+                    <td>{{ point.south }}</td>
+                    <td>{{ point.east }}</td>
+                    <td>{{ point.west }}</td>
+                  </tr>
+              </tbody>
+        </table>
+    </div>
+{% endblock %}
