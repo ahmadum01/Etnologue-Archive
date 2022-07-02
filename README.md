@@ -1,4 +1,4 @@
-# An archive is a local copy of the site database [Ethnologue](https://www.ethnologue.com/)
+# The Archive is a local copy of the site database [Ethnologue](https://www.ethnologue.com/)
 ___
 ### To launch this application you need to:
 1. Create virtual environment: Windows - `python -m venv venv` / Unix - `python3 -m venv venv`
