@@ -1,4 +1,4 @@
-import parsing.poligon.config as config
+import parsing.parse_services.config as config
 import requests
 import json
 import csv
@@ -297,3 +297,4 @@ def get_map_points() -> list:
 
 if __name__ == '__main__':
     print(Parser.parse_lang_detail('asdf', '/language/eng'))
+    print(len(get_langs()['g']))

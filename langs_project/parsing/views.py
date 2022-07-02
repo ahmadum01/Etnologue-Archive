@@ -1,6 +1,6 @@
 from django import views
 from django.http import HttpResponse
-from .poligon.languages import get_map_points, get_iso, Parser, get_langs
+from .parse_services.languages import get_map_points, get_iso, Parser, get_langs
 from langs.models import Iso, MapPoint, Language
 import time
 
@@ -33,14 +33,23 @@ class FillMapPoints(views.View):
 
 
 class FillLangDetail(views.View):
-    def get(self):
+    def get(self, request):
         langs = get_langs()
+        selected_letter = 'g'
+        length = len(langs[selected_letter])
         count = 0
         start = time.perf_counter()
-
-        for lang_name, link in langs['a']:
+        flag = True
+        for lang_name, link in langs[selected_letter]:
             count += 1
-            print(count)
+            # if flag:
+            #     if link.split('/')[-1] == 'fom':
+            #         flag = False
+            #         continue
+            #     else:
+            #         continue
+            print(f'{count} from {length}')
+
             lang_detail = Parser.parse_lang_detail(lang_name, link)
             Language.objects.create(
                 language_name=lang_detail['language_name'],
