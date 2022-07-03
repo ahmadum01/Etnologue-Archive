@@ -21,5 +21,5 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('langs.urls')),
-    path('parse/', include('parsing.urls'))
+    # path('parse/', include('parsing.urls')) # Application only for parsing
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

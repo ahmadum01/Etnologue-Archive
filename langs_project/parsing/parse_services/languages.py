@@ -296,5 +296,4 @@ def get_map_points() -> list:
 
 
 if __name__ == '__main__':
-    print(Parser.parse_lang_detail('asdf', '/language/eng'))
-    print(len(get_langs()['g']))
+    print(Parser.parse_lang_detail('Ñandeva', '/language/tpj'))
